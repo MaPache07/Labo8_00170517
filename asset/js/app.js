@@ -89,19 +89,21 @@ const crearElemento = (bitacora, tbody) => {
     }); 
     var droptd = document.createElement("td");
     var drop = document.createElement("input");
+    drop.setAttribute("class", "delete");
     drop.type = "button";
     drop.value = "Borrar";
     droptd.appendChild(drop);
     tr.appendChild(droptd);
     tbody.appendChild(tr);
+
+    document.querySelectorAll(".delete").forEach((item) => {
+        item.addEventListener("click", function(){
+            item.parentNode.parentNode.style.display = "none";
+        })
+    })
 }
 
-/*
-drop.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-    
-})
-*/
+
 
 const eliminar = (tbody) => {
     while (tbody.firstChild) {
