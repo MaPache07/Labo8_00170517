@@ -87,8 +87,21 @@ const crearElemento = (bitacora, tbody) => {
         tr.setAttribute("class", "click");
         tr.appendChild(td);
     }); 
+    var droptd = document.createElement("td");
+    var drop = document.createElement("input");
+    drop.type = "button";
+    drop.value = "Borrar";
+    droptd.appendChild(drop);
+    tr.appendChild(droptd);
     tbody.appendChild(tr);
 }
+
+/*
+drop.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+    
+})
+*/
 
 const eliminar = (tbody) => {
     while (tbody.firstChild) {
