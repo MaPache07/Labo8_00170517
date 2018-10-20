@@ -98,7 +98,9 @@ const crearElemento = (bitacora, tbody) => {
 
     document.querySelectorAll(".delete").forEach((item) => {
         item.addEventListener("click", function(){
-            item.parentNode.parentNode.style.display = "none";
+            let index = item.parentNode.parentNode.index;
+            item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
+            bitacoras.splice(index, 1);
         })
     })
 }
